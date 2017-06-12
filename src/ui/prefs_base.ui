@@ -304,7 +304,7 @@ p, li { white-space: pre-wrap; }
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="text">
-         <string>Allow negative stock, but alert the user.</string>
+         <string>Allow negative stock, without alert the user.</string>
         </property>
        </widget>
       </item>

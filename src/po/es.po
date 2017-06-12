@@ -1642,8 +1642,8 @@ msgstr "Ticket pequeño usando la impresora de tickets (/dev/ttyAMA0)"
 msgid "Printer Device:"
 msgstr "Dispositivo de impresión:"
 
-msgid "Allow negative stock, but alert the user."
-msgstr "Permitir existencia negativa alertando"
+msgid "Allow negative stock, without alert the user."
+msgstr "Permitir existencia negativa sin alerta."
 
 msgid "Apply only first discount"
 msgstr "Aplicar solo primer descuento"

@@ -219,35 +219,6 @@
            <string>Best sellers</string>
           </property>
          </widget>
-         <widget class="QCheckBox" name="rbFilterBySubCategory">
-          <property name="geometry">
-           <rect>
-            <x>-20</x>
-            <y>90</y>
-            <width>56</width>
-            <height>22</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Sub</string>
-          </property>
-         </widget>
-         <widget class="QComboBox" name="comboFilterBySubCategory">
-          <property name="geometry">
-           <rect>
-            <x>-40</x>
-            <y>60</y>
-            <width>85</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>160</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
         </widget>
        </item>
        <item>
@@ -424,7 +395,7 @@
                <property name="spacing">
                 <number>4</number>
                </property>
-               <item row="0" column="5">
+               <item row="0" column="4">
                 <widget class="QRadioButton" name="rbFilterByCategory">
                  <property name="text">
                   <string>Category</string>
@@ -434,7 +405,7 @@
                <item row="0" column="2">
                 <widget class="MibitLineEdit" name="editItemCode">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
@@ -465,6 +436,12 @@
                </item>
                <item row="0" column="6">
                 <widget class="QComboBox" name="comboFilterByCategory">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="maximumSize">
                   <size>
                    <width>160</width>
@@ -492,6 +469,23 @@
                  </property>
                  <property name="autoScrollMargin">
                   <number>16</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QCheckBox" name="rbFilterBySubCategory">
+                 <property name="text">
+                  <string>Sub</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="7">
+                <widget class="QComboBox" name="comboFilterBySubCategory">
+                 <property name="maximumSize">
+                  <size>
+                   <width>160</width>
+                   <height>16777215</height>
+                  </size>
                  </property>
                 </widget>
                </item>

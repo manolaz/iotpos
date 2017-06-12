@@ -364,6 +364,7 @@ iotposView::iotposView() //: QWidget(parent)
   //ui_mainview.groupWidgets->setCurrentIndex(pageMain);
   ui_mainview.mainPanel->setCurrentIndex(pageMain);
   //ui_mainview.stackedWidget_3->setCurrentIndex(1);
+  ui_mainview.comboFilterBySubCategory->hide();
   // point the public ui pointers
   frameLeft = ui_mainview.frameLeft;
   frame     = ui_mainview.frame;
@@ -547,11 +548,11 @@ void iotposView::qtyChanged(QTableWidgetItem *item)
                 if (!itemsNotAvailable.isEmpty())
                     msg = i18n("<html><font color=red><b>The group/pack is not available because:<br>%1</b></font></html>", itemsNotAvailable.join("<br>"));
                 else
-                    msg = i18n("<html><font color=red><b>There are only %1 articles of your choice at stock.<br> You requested %2</b></font></html>", info.stockqty,newQty+onList);
+                    msg = i18n("<html><font color=blue><b>There are only %1 articles of your choice at stock.<br> You requested %2</b></font></html>", info.stockqty,newQty+onList);
 
                 if (ui_mainview.mainPanel->currentIndex() == pageMain) {
                     ui_mainview.editItemCode->clearFocus();
-                    tipCode->showTip(msg, 6000);
+                   // tipCode->showTip(msg, 3000);
                 }
                 if (ui_mainview.mainPanel->currentIndex() == pageSearch) {
                     ui_mainview.labelSearchMsg->setText(msg);
@@ -1879,10 +1880,10 @@ if ( doNotAddMoreItems ) { //only for reservations
         msg = i18n("<html><font color=red>The product you requested %1 articles <b>has a negative or zero stock level.</b></font></html>", qty);
     qDebug()<<"AllowNegativeStock:"<<allowNegativeStock<<" info.stockqty:"<<info.stockqty<<" qty:"<<qty;
 
-    if (!msg.isEmpty()) {
+    if (!msg.isEmpty() && !allowNegativeStock) {
         if (ui_mainview.mainPanel->currentIndex() == pageMain) {
             ui_mainview.editItemCode->clearFocus();
-            tipCode->showTip(msg, 10000);
+            tipCode->showTip(msg, 3000);
         }
         if (ui_mainview.mainPanel->currentIndex() == pageSearch) {
           ui_mainview.labelSearchMsg->setText(msg);
@@ -4873,6 +4874,8 @@ void iotposView::setFilter()
  }
   else {
     if (ui_mainview.rbFilterByCategory->isChecked()) { //by category
+        ui_mainview.comboFilterByCategory->show();
+        ui_mainview.comboFilterBySubCategory->hide();
       //Find catId for the text on the combobox.
       int catId=-1;
       int subCatId = -1;
@@ -4882,6 +4885,8 @@ void iotposView::setFilter()
       }
       //Now check subcategory
       if (ui_mainview.rbFilterBySubCategory->isChecked()){
+          ui_mainview.comboFilterByCategory->hide();
+          ui_mainview.comboFilterBySubCategory->show();
         QString subCatText = ui_mainview.comboFilterBySubCategory->currentText();
         if (subcategoriesHash.contains(subCatText))
             subCatId = subcategoriesHash.value(subCatText);
