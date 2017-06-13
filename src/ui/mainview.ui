@@ -442,9 +442,15 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>164</width>
+                   <height>0</height>
+                  </size>
+                 </property>
                  <property name="maximumSize">
                   <size>
-                   <width>160</width>
+                   <width>164</width>
                    <height>16777215</height>
                   </size>
                  </property>
@@ -481,9 +487,21 @@
                </item>
                <item row="0" column="7">
                 <widget class="QComboBox" name="comboFilterBySubCategory">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>164</width>
+                   <height>0</height>
+                  </size>
+                 </property>
                  <property name="maximumSize">
                   <size>
-                   <width>160</width>
+                   <width>164</width>
                    <height>16777215</height>
                   </size>
                  </property>
