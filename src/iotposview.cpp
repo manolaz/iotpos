@@ -1922,10 +1922,13 @@ if ( doNotAddMoreItems ) { //only for reservations
     }
    productsModel->setFilter(QString("products.isARawProduct=false and products.category=%1").arg(catId));
   }
- // else {
+  else {
       //by most sold products in current month --biel
- //   productsModel->setFilter("products.isARawProduct=false and (products.datelastsold > ADDDATE(sysdate( ), INTERVAL -31 DAY )) ORDER BY products.datelastsold DESC LIMIT 20"); //limit or not the result to 5?
-  // }
+      if (ui_mainview.rbFilterBySubCategory->isChecked()){
+          ui_mainview.rbFilterBySubCategory->setChecked(false);
+      }
+    productsModel->setFilter("products.isARawProduct=false and (products.datelastsold > ADDDATE(sysdate( ), INTERVAL -31 DAY )) ORDER BY products.datelastsold DESC LIMIT 20"); //limit or not the result to 5?
+   }
 
 
 
@@ -4867,6 +4870,9 @@ void iotposView::setFilter()
   QRegExp regexp = QRegExp(ui_mainview.editFilterByDesc->text());
 
   if (ui_mainview.rbFilterByDesc->isChecked()) {
+      ui_mainview.rbFilterBySubCategory->setChecked(false);
+      ui_mainview.comboFilterByCategory->show();
+      ui_mainview.comboFilterBySubCategory->hide();
       ui_mainview.editItemCode->setFocus();//by description
       if (!regexp.isValid())  ui_mainview.editFilterByDesc->setText("");
       if (ui_mainview.editFilterByDesc->text()=="*" || ui_mainview.editFilterByDesc->text()=="")
@@ -4896,12 +4902,15 @@ void iotposView::setFilter()
       else
         productsModel->setFilter(QString("products.isARawProduct=false and products.category=%1").arg(catId));
     }
-    //else { //by most sold products in current month --biel
-    //    {
-    //  productsModel->setFilter("products.isARawProduct=false and (products.datelastsold > ADDDATE(sysdate( ), INTERVAL -31 DAY )) ORDER BY products.datelastsold DESC LIMIT 20"); //limit or not the result to 5?
-   //   }
+    else { //by most sold products in current month --biel
+        {
+            if (ui_mainview.rbFilterBySubCategory->isChecked()){
+                ui_mainview.rbFilterBySubCategory->setChecked(false);
+            }
+      productsModel->setFilter("products.isARawProduct=false and (products.datelastsold > ADDDATE(sysdate( ), INTERVAL -31 DAY )) ORDER BY products.datelastsold DESC LIMIT 20"); //limit or not the result to 5?
+      }
       //products.code IN (SELECT * FROM (SELECT product_id FROM (SELECT product_id, sum( units ) AS sold_items FROM transactions t, transactionitems ti WHERE  t.id = ti.transaction_id AND t.date > ADDDATE( sysdate( ) , INTERVAL -31 DAY ) GROUP BY ti.product_id) month_sold_items ORDER BY sold_items DESC LIMIT 5) popular_products)
-  //  }
+    }
 
 
   }

@@ -206,19 +206,6 @@
            <blue>153</blue>
           </color>
          </property>
-         <widget class="QRadioButton" name="rbFilterByPopularity">
-          <property name="geometry">
-           <rect>
-            <x>-10</x>
-            <y>110</y>
-            <width>109</width>
-            <height>22</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Best sellers</string>
-          </property>
-         </widget>
         </widget>
        </item>
        <item>
@@ -395,7 +382,7 @@
                <property name="spacing">
                 <number>4</number>
                </property>
-               <item row="0" column="4">
+               <item row="0" column="5">
                 <widget class="QRadioButton" name="rbFilterByCategory">
                  <property name="text">
                   <string>Category</string>
@@ -434,7 +421,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
+               <item row="0" column="7">
                 <widget class="QComboBox" name="comboFilterByCategory">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -456,7 +443,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="5" column="0" colspan="8">
+               <item row="5" column="0" colspan="11">
                 <widget class="QListView" name="listView">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -478,14 +465,21 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="3">
+               <item row="0" column="4">
                 <widget class="QCheckBox" name="rbFilterBySubCategory">
                  <property name="text">
                   <string>Sub</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="7">
+               <item row="0" column="9">
+                <widget class="QRadioButton" name="rbFilterByPopularity">
+                 <property name="text">
+                  <string>Top</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="8">
                 <widget class="QComboBox" name="comboFilterBySubCategory">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
