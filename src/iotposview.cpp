@@ -171,11 +171,11 @@ iotposView::iotposView() //: QWidget(parent)
  //   QTimer::singleShot(1100, this, SLOT(setupDb()));
  //   QTimer::singleShot(2000, timerCheckDb, SLOT(start()));
    // QTimer::singleShot(20000, timerUpdateGraphs, SLOT(start()));
-    QTimer::singleShot(2010, this, SLOT(showWelcomeGraphs()));
+   // QTimer::singleShot(2010, this, SLOT(showWelcomeGraphs()));
     QTimer::singleShot(2000, this, SLOT(login()));
     //aquimeme
     rmTimer = new QTimer(this);
-    connect(rmTimer, SIGNAL(timeout()), SLOT(reSelectModels()) );
+   // connect(rmTimer, SIGNAL(timeout()), SLOT(reSelectModels()) );
     rmTimer->start(1000*60*2);
 
 
@@ -1880,10 +1880,10 @@ if ( doNotAddMoreItems ) { //only for reservations
         msg = i18n("<html><font color=red>The product you requested %1 articles <b>has a negative or zero stock level.</b></font></html>", qty);
     qDebug()<<"AllowNegativeStock:"<<allowNegativeStock<<" info.stockqty:"<<info.stockqty<<" qty:"<<qty;
 
-    if (!msg.isEmpty() && !allowNegativeStock) {
+    if (!msg.isEmpty()) {
         if (ui_mainview.mainPanel->currentIndex() == pageMain) {
             ui_mainview.editItemCode->clearFocus();
-            tipCode->showTip(msg, 3000);
+            tipCode->showTip(msg, 4000);
         }
         if (ui_mainview.mainPanel->currentIndex() == pageSearch) {
           ui_mainview.labelSearchMsg->setText(msg);
