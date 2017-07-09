@@ -971,16 +971,7 @@
      <property name="spacing">
       <number>2</number>
      </property>
-     <property name="leftMargin">
-      <number>2</number>
-     </property>
-     <property name="topMargin">
-      <number>2</number>
-     </property>
-     <property name="rightMargin">
-      <number>2</number>
-     </property>
-     <property name="bottomMargin">
+     <property name="margin">
       <number>2</number>
      </property>
      <item>
@@ -1253,14 +1244,7 @@ p, li { white-space: pre-wrap; }
            <string notr="true">color:blue;</string>
           </property>
           <property name="text">
-           <string>Price: drop % or</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="chRise">
-          <property name="text">
-           <string>Rise %</string>
+           <string>Price drop % for the group:</string>
           </property>
          </widget>
         </item>
@@ -1695,7 +1679,6 @@ color: blue;</string>
   <tabstop>btnCalculatePrice</tabstop>
   <tabstop>editGroupPriceDrop</tabstop>
   <tabstop>sourcePView</tabstop>
-  <tabstop>editFilter</tabstop>
   <tabstop>editGroupQty</tabstop>
   <tabstop>btnAdd</tabstop>
   <tabstop>btnRemove</tabstop>

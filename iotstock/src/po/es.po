@@ -1014,8 +1014,8 @@ msgstr ""
 #: po/extractedrc.cpp:269 po/extractedrc.cpp:400 extractedrc.cpp:269
 #: extractedrc.cpp:400
 #, no-c-format
-msgid "Price drop % or"
-msgstr "Descuento % o"
+msgid "Price drop % for the group:"
+msgstr "Descuento % por grupo"
 
 msgid "Rise %"
 msgstr "Incremento %"
@@ -1513,7 +1513,7 @@ msgid ""
 "font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; font-style:italic;\">View Products List As</span>:</p></body></"
+"weight:600; font-style:italic;\">View</span>:</p></body></"
 "html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -1525,7 +1525,7 @@ msgstr ""
 "font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; font-style:italic;\">Ver lista de productos como:</span>:</p></"
+"weight:600; font-style:italic;\">Vista</span>:</p></"
 "body></html>"
 
 #. i18n: file: ui/squeezeview_base.ui:889

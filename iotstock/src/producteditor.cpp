@@ -122,6 +122,7 @@ ProductEditor::ProductEditor( QWidget *parent, bool newProduct )
     connect( ui->btnCloseGroup, SIGNAL(clicked()), this, SLOT(checkFieldsState()) );
     connect( ui->btnShowGroup, SIGNAL(clicked()),  groupPanel, SLOT(showPanel()) );
     connect( ui->editFilter, SIGNAL(textEdited ( const QString &)), SLOT(applyFilter(const QString &)) );
+    //connect( ui->editPFilter, SIGNAL(textEdited ( const QString &)), SLOT(applyFilter(const QString &)) );
     connect( ui->btnAdd,    SIGNAL(clicked()), SLOT(addItem()) );
     connect( ui->btnRemove, SIGNAL(clicked()), SLOT(removeItem()) );
     connect( ui->groupView, SIGNAL(itemDoubleClicked(QTableWidgetItem*)), SLOT(itemDoubleClicked(QTableWidgetItem*)) );
@@ -130,7 +131,7 @@ ProductEditor::ProductEditor( QWidget *parent, bool newProduct )
     connect( ui->editFinalPrice, SIGNAL(textChanged(QString) ), SLOT(calculateProfit(QString)) );
 
     connect( ui->chUnlimitedStock, SIGNAL(clicked(bool)), SLOT(setUnlimitedStock(bool)) );
-    connect( ui->chRise, SIGNAL(clicked(bool)), SLOT(on_chRise_clicked(bool)) );
+    //connect( ui->chRise, SIGNAL(clicked(bool)), SLOT(on_chRise_clicked(bool)) );
     connect( ui->editAlphacode,  SIGNAL(textEdited(const QString &)), this, SLOT(verifyAlphacodeDuplicates()) );
     connect( ui->editVendorcode,  SIGNAL(textEdited(const QString &)), this, SLOT(verifyVendorcodeDuplicates()) );
 
@@ -1022,11 +1023,7 @@ void ProductEditor::calculateGroupValues()
     //update groupInfo
     groupInfo.count += info.qtyOnList;
     groupInfo.cost  += info.cost*info.qtyOnList;
-    if (ui->chRise->isChecked()) {
-       groupInfo.price += (info.price +info.price*(groupInfo.priceDrop/100)) * info.qtyOnList; //info.price*info.qtyOnList;
-    } else {
     groupInfo.price += (info.price -info.price*(groupInfo.priceDrop/100)) * info.qtyOnList; //info.price*info.qtyOnList;
-    }
     groupInfo.taxMoney += info.totaltax*info.qtyOnList;
     bool yes = false;
     if (info.stockqty >= info.qtyOnList ) yes = true;
@@ -1268,7 +1265,4 @@ void ProductEditor::createNewMeasure()
 #include "producteditor.moc"
 
 
-void ProductEditorUI::on_chRise_clicked(bool checked)
-{
 
-}

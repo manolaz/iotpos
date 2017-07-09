@@ -1255,8 +1255,8 @@
                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lucida Grande'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;View Products List As&lt;/span&gt;:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lucida Grande'; font-size:9pt; font-weight:600; font-style:italic;&quot;&gt;View&lt;/span&gt;&lt;span style=&quot; font-family:'Lucida Grande'; font-size:9pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -2694,31 +2694,7 @@ color:black;</string>
               <height>16777215</height>
              </size>
             </property>
-            <widget class="QWidget" name="page_3">
-             <widget class="QComboBox" name="comboProductsFilterBySubCategory">
-              <property name="geometry">
-               <rect>
-                <x>60</x>
-                <y>20</y>
-                <width>168</width>
-                <height>20</height>
-               </rect>
-              </property>
-             </widget>
-             <widget class="QRadioButton" name="rbProductsFilterBySubCategory">
-              <property name="geometry">
-               <rect>
-                <x>-111</x>
-                <y>20</y>
-                <width>169</width>
-                <height>20</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>by Subcategory</string>
-              </property>
-             </widget>
-            </widget>
+            <widget class="QWidget" name="page_3"/>
             <widget class="QWidget" name="page_5">
              <widget class="QCheckBox" name="chChainiedFilterForCategories">
               <property name="geometry">
@@ -2854,14 +2830,7 @@ color:black;</string>
         <property name="horizontalSpacing">
          <number>2</number>
         </property>
-        <item row="3" column="2">
-         <widget class="QRadioButton" name="rbProductsFilterByGroup">
-          <property name="text">
-           <string>show only group/pack products</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
+        <item row="3" column="0">
          <widget class="QRadioButton" name="rbProductsFilterByAvailable">
           <property name="text">
            <string>show available items</string>
@@ -2895,24 +2864,17 @@ color:black;</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QRadioButton" name="rbProductsFilterByCategory">
-          <property name="text">
-           <string>by category</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0" colspan="2">
+        <item row="4" column="0" colspan="2">
          <widget class="QRadioButton" name="rbProductsFilterByRaw">
           <property name="text">
            <string>show raw products only</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="2">
-         <widget class="QRadioButton" name="rbProductsFilterByLessSold">
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="rbProductsFilterByCategory">
           <property name="text">
-           <string>show less sold</string>
+           <string>by category</string>
           </property>
          </widget>
         </item>
@@ -2933,10 +2895,34 @@ color:black;</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
+        <item row="3" column="1">
          <widget class="QRadioButton" name="rbProductsFilterByMostSold">
           <property name="text">
            <string>show most sold</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QRadioButton" name="rbProductsFilterBySubCategory">
+          <property name="text">
+           <string>by Subcategory</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboProductsFilterBySubCategory"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QRadioButton" name="rbProductsFilterByLessSold">
+          <property name="text">
+           <string>show less sold</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QRadioButton" name="rbProductsFilterByGroup">
+          <property name="text">
+           <string>show only group/pack products</string>
           </property>
          </widget>
         </item>
